@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap');
+
+@layer base {
+  body {
+    @apply font-barlow text-base;
+  }
+}
+
+@layer components {
+  .btn-yellow {
+    @apply relative inline-block font-fraunces font-bold uppercase text-sm tracking-wider text-dark-blue;
+  }
+  .btn-yellow::after {
+    content: '';
+    @apply absolute bottom-0 left-[-2px] right-[-2px] h-2 bg-yellow/25 rounded-full -z-10 transition-all duration-300;
+  }
+  .btn-yellow:hover::after {
+    @apply bg-yellow;
+  }
+
+  .btn-red {
+    @apply relative inline-block font-fraunces font-bold uppercase text-sm tracking-wider text-dark-blue;
+  }
+  .btn-red::after {
+    content: '';
+    @apply absolute bottom-0 left-[-2px] right-[-2px] h-2 bg-soft-red/25 rounded-full -z-10 transition-all duration-300;
+  }
+  .btn-red:hover::after {
+    @apply bg-soft-red;
+  }
+
+  .btn-contact {
+    @apply font-fraunces font-bold text-xs uppercase tracking-wider text-dark-blue bg-white px-8 py-4 rounded-full transition-all duration-300;
+  }
+  .btn-contact:hover {
+    @apply bg-white/25 text-white;
+  }
+}
+
+@layer utilities {
+  .bg-graphic-design {
+    background-image: url('../images/mobile/image-graphic-design.jpg');
+  }
+  .bg-photography {
+    background-image: url('../images/mobile/image-photography.jpg');
+  }
+  .bg-header {
+    background-image: url('../images/mobile/image-header.jpg');
+  }
+
+  @media (min-width: 768px) {
+    .bg-graphic-design {
+      background-image: url('../images/desktop/image-graphic-design.jpg');
+    }
+    .bg-photography {
+      background-image: url('../images/desktop/image-photography.jpg');
+    }
+    .bg-header {
+      background-image: url('../images/desktop/image-header.jpg');
+    }
+  }
+}
